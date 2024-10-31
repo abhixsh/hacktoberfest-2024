@@ -12,15 +12,15 @@ body {
   height: 100vh;
   font-family: 'Arial', sans-serif;
   background: linear-gradient(135deg, #7F53AC, #647DEE);
-  transition: background 0.4s ease-in-out;
   overflow: hidden;
+  transition: background 0.4s ease-in-out;
 }
 
 body.dark-mode {
   background: linear-gradient(135deg, #302b63, #0f0c29);
 }
 
-/* Title positioned in the top-left corner */
+/* Title in Top Left */
 .title {
   position: absolute;
   top: 20px;
@@ -35,6 +35,7 @@ body.dark-mode .title {
   color: #A78BFA;
 }
 
+/* Dark Mode Toggle */
 .theme-toggle {
   position: absolute;
   top: 20px;
@@ -60,73 +61,64 @@ body.dark-mode .theme-toggle {
   background: rgba(30, 30, 30, 0.8);
 }
 
+/* Container with Glassmorphism */
 .container {
   width: 90%;
   max-width: 600px;
   text-align: center;
-  background-color: #ffffff;
+  backdrop-filter: blur(10px) saturate(150%);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.4);
   padding: 25px;
   transition: background-color 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 body.dark-mode .container {
-  background-color: #1e1e1e;
+  background: rgba(30, 30, 30, 0.3);
 }
 
+/* Textarea Styling with Glass Effect */
 textarea {
   width: 100%;
   height: 150px;
   margin: 15px 0;
   padding: 15px;
   font-size: 1rem;
-  border: 2px solid #ddd;
+  border: 2px solid rgba(200, 200, 200, 0.3);
   border-radius: 10px;
-  background-color: #f8f5ff;
+  background: rgba(255, 255, 255, 0.2);
   color: #4C1D95;
+  backdrop-filter: blur(8px);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode textarea {
-  background-color: #333;
+  background: rgba(30, 30, 30, 0.4);
   color: #A78BFA;
-  border-color: #444;
+  border-color: rgba(90, 90, 90, 0.3);
 }
 
-.options {
-  margin: 10px 0;
-}
-
-label {
-  color: #4C1D95;
-  font-weight: bold;
-  margin-right: 5px;
-  transition: color 0.3s ease;
-}
-
-body.dark-mode label {
-  color: #A78BFA;
-}
-
-/* Dropdown Menus Styling */
+/* Dropdown Menus with Glass Effect */
 select {
   padding: 10px 15px;
   font-size: 1rem;
   font-weight: bold;
   color: #4C1D95;
-  background: linear-gradient(135deg, #f3e8ff, #e0c3fc);
-  border: 2px solid #ddd;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(200, 200, 200, 0.3);
   border-radius: 8px;
   outline: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  backdrop-filter: blur(8px);
   appearance: none;
   position: relative;
 }
 
 select:hover {
-  background: linear-gradient(135deg, #e0c3fc, #f3e8ff);
+  background: rgba(255, 255, 255, 0.3);
   border-color: #c084fc;
 }
 
@@ -135,36 +127,16 @@ select:focus {
   box-shadow: 0px 0px 8px rgba(128, 90, 213, 0.4);
 }
 
-/* Dropdown Arrow Styling */
-select::after {
-  content: '▼';
-  font-size: 0.8rem;
-  color: #4C1D95;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-/* Dark Mode Adjustments for Dropdown Menus */
 body.dark-mode select {
   color: #A78BFA;
-  background: linear-gradient(135deg, #333, #444);
-  border-color: #555;
+  background: rgba(30, 30, 30, 0.4);
+  border-color: rgba(90, 90, 90, 0.3);
 }
 
 body.dark-mode select:hover {
-  background: linear-gradient(135deg, #444, #333);
-  border-color: #A78BFA;
+  background: rgba(50, 50, 50, 0.4);
 }
 
-body.dark-mode select:focus {
-  border-color: #A78BFA;
-  box-shadow: 0px 0px 8px rgba(167, 139, 250, 0.6);
-}
-
-/* Dropdown Option Styling */
 select option {
   background-color: #f8f5ff;
   color: #4C1D95;
@@ -176,8 +148,9 @@ body.dark-mode select option {
   color: #A78BFA;
 }
 
+/* Button Styling with Glassmorphism */
 button {
-  background: linear-gradient(135deg, #A78BFA, #C084FC);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
   padding: 12px 30px;
   font-size: 1.1rem;
@@ -188,18 +161,32 @@ button {
   transition: all 0.3s ease, transform 0.2s ease-in;
   margin: 10px 5px;
   box-shadow: 0px 8px 16px rgba(128, 90, 213, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 button:hover {
-  background: linear-gradient(135deg, #C084FC, #A78BFA);
+  background: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
   box-shadow: 0px 10px 20px rgba(128, 90, 213, 0.6);
 }
 
 body.dark-mode button {
-  background: linear-gradient(135deg, #5356ac, #878dd4);
+  background: rgba(40, 40, 40, 0.4);
+  color: #A78BFA;
 }
 
 button:active {
   transform: translateY(2px);
+}
+
+label {
+  color: #4C1D95;
+  font-weight: bold;
+  margin-right: 5px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode label {
+  color: #A78BFA;
 }
