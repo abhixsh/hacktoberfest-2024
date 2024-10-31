@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Obfuscator</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Obfuscator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Title moved to top left corner -->
-  <div class="title">
-    JavaScript Obfuscator
-  </div>
-
-  <!-- Dark mode toggle button in top right corner -->
-  <div class="theme-toggle" onclick="toggleDarkMode()">
-    <span id="themeIcon">☀️</span>
-  </div>
-  
-  <div class="container">
-    <label for="inputCode">Enter Your Code:</label>
-    <textarea id="inputCode" placeholder="Type your JavaScript code here..."></textarea>
-    
-    <div class="options">
-      <label for="obfuscationType">Obfuscation Type:</label>
-      <select id="obfuscationType">
-        <option value="base64">Base64</option>
-        <option value="rot13">ROT13</option>
-        <option value="scramble">Character Scramble</option>
-      </select>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
     </div>
 
-    <div class="options">
-      <label for="obfuscationStrength">Strength:</label>
-      <select id="obfuscationStrength">
-        <option value="1">Low</option>
-        <option value="2">Medium</option>
-        <option value="3">High</option>
-      </select>
+    <!-- Title in Top Left -->
+    <div class="title">JavaScript Obfuscator</div>
+
+    <!-- Dark Mode Toggle Button -->
+    <div class="theme-toggle" onclick="toggleDarkMode()">🌙</div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <label for="input-code">Enter JavaScript Code:</label>
+        <textarea id="input-code" placeholder="Enter your JavaScript code here..."></textarea>
+        
+        <!-- Encoding Options -->
+        <label for="encode-type">Encoding Type:</label>
+        <select id="encode-type">
+            <option value="base64">Base64</option>
+            <option value="unicode">Unicode</option>
+        </select>
+
+        <!-- Obfuscate Button -->
+        <button onclick="obfuscateCode()">Obfuscate</button>
+
+        <!-- Obfuscated Code Output -->
+        <label for="output-code">Obfuscated Code:</label>
+        <textarea id="output-code" readonly placeholder="Your obfuscated code will appear here..."></textarea>
+
+        <!-- Copy Code Button -->
+        <button onclick="copyCode()">Copy Code</button>
     </div>
 
-    <button onclick="obfuscateCode()">Obfuscate Code</button>
-
-    <br><br><br>
-    
-    <label for="outputCode">Obfuscated Code:</label>
-    <textarea id="outputCode" readonly></textarea>
-    
-    <button onclick="copyCode()" id="copyButton">Copy Code</button>
-  </div>
-  
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
