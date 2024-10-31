@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7F53AC, #647DEE);
+    transition: background 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  body.dark-mode {
+    background: linear-gradient(135deg, #302b63, #0f0c29);
+  }
+  
+  /* Title positioned in the top-left corner */
+  .title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: #271e29;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  body.dark-mode .title {
+    color: #A78BFA;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+  }
+  
+  body.dark-mode .theme-toggle {
+    background: rgba(30, 30, 30, 0.8);
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    transition: background-color 0.4s ease;
+  }
+  
+  body.dark-mode .container {
+    background-color: #1e1e1e;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 150px;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f5ff;
+    color: #4C1D95;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  body.dark-mode textarea {
+    background-color: #333;
+    color: #A78BFA;
+    border-color: #444;
+  }
+  
+  .options {
+    margin: 10px 0;
+  }
+  
+  label {
+    color: #4C1D95;
+    font-weight: bold;
+    margin-right: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  body.dark-mode label {
+    color: #A78BFA;
+  }
+  
+  select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+  }
+  
+  button {
+    background: linear-gradient(135deg, #A78BFA, #C084FC);
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease-in;
+    margin: 10px 5px;
+    box-shadow: 0px 8px 16px rgba(128, 90, 213, 0.4);
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #C084FC, #A78BFA);
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px rgba(128, 90, 213, 0.6);
+  }
+  
+  body.dark-mode button {
+    background: linear-gradient(135deg, #5356ac, #878dd4);
+  }
+  
