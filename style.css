@@ -13,7 +13,7 @@ body {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(135deg, #7F53AC, #647DEE);
   overflow: hidden;
-  transition: background 0.4s ease-in-out;
+  transition: background 0.42s ease-in-out;
 }
 
 body.dark-mode {
@@ -23,12 +23,12 @@ body.dark-mode {
 /* Title in Top Left */
 .title {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 1.5rem;
+  top: 22px;
+  left: 22px;
+  font-size: 1.53rem;
   color: #4C1D95;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.32s ease;
 }
 
 body.dark-mode .title {
@@ -41,8 +41,8 @@ body.dark-mode .title {
   top: 20px;
   right: 20px;
   background: rgba(255, 255, 255, 0.8);
-  width: 40px;
-  height: 40px;
+  width: 41px;
+  height: 39px;
   border-radius: 50%;
   display: flex;
   align-items: center;
