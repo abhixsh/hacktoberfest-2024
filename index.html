@@ -16,29 +16,36 @@
     <div class="title">JavaScript Obfuscator</div>
 
     <!-- Dark Mode Toggle Button -->
-    <div class="theme-toggle" onclick="toggleDarkMode()">🌙</div>
+    <div class="theme-toggle" id="themeIcon" onclick="toggleDarkMode()">🌙</div>
 
     <!-- Main Container -->
     <div class="container">
-        <label for="input-code">Enter JavaScript Code:</label>
-        <textarea id="input-code" placeholder="Enter your JavaScript code here..."></textarea>
-        
-        <!-- Encoding Options -->
-        <label for="encode-type">Encoding Type:</label>
-        <select id="encode-type">
+        <label for="inputCode">Enter JavaScript Code:</label>
+        <textarea id="inputCode" placeholder="Enter your JavaScript code here..."></textarea>
+
+        <!-- Obfuscation Options -->
+        <label for="obfuscationType">Obfuscation Type:</label>
+        <select id="obfuscationType">
             <option value="base64">Base64</option>
-            <option value="unicode">Unicode</option>
+            <option value="rot13">ROT13</option>
+            <option value="scramble">Scramble</option>
         </select>
+
+        <!-- Obfuscation Strength (only for scramble) -->
+        <div id="strength-container">
+            <label for="obfuscationStrength">Scramble Strength:</label>
+            <input type="number" id="obfuscationStrength" min="1" max="10" value="1">
+        </div>
 
         <!-- Obfuscate Button -->
         <button onclick="obfuscateCode()">Obfuscate</button>
 
         <!-- Obfuscated Code Output -->
-        <label for="output-code">Obfuscated Code:</label>
-        <textarea id="output-code" readonly placeholder="Your obfuscated code will appear here..."></textarea>
+        <label for="outputCode">Obfuscated Code:</label>
+        <textarea id="outputCode" readonly placeholder="Your obfuscated code will appear here..."></textarea>
 
         <!-- Copy Code Button -->
-        <button onclick="copyCode()">Copy Code</button>
+        <button id="copyButton" onclick="copyCode()">Copy Code</button>
     </div>
 
     <script src="script.js"></script>
