@@ -47,15 +47,35 @@
 
             <div class="options-group">
                 <div class="select-group">
-                    <label for="obfuscationType">Obfuscation Type:</label>
-                    <select id="obfuscationType" aria-describedby="type-help">
-                        <option value="base64">Base64 Encoding</option>
-                        <option value="rot13">ROT13 Cipher</option>
-                        <option value="scramble">Character Scramble</option>
-                        <option value="unicode">Unicode Escape</option>
-                        <option value="hex">Hexadecimal Encoding</option>
+                    <label for="obfuscationType">Obfuscation Method:</label>
+                    <select id="obfuscationType" aria-describedby="type-help" onchange="updateStrengthVisibility()">
+                        <option value="base64">Base64 Encoding - Simple and reversible</option>
+                        <option value="rot13">ROT13 Cipher - Letter substitution</option>
+                        <option value="scramble">Character Scramble - Variable complexity</option>
+                        <option value="unicode">Unicode Escape - Convert to escape sequences</option>
+                        <option value="hex">Hexadecimal Encoding - Convert to hex values</option>
+                        <option value="minify">Code Minification - Remove whitespace and comments</option>
+                        <option value="variable">Variable Name Obfuscation - Rename identifiers</option>
                     </select>
-                    <small id="type-help" class="help-text">Choose your preferred obfuscation method</small>
+                    <small id="type-help" class="help-text">
+                        Select obfuscation technique. 
+                        <a href="#" onclick="showMethodInfo()" class="info-link">Learn more about methods</a>
+                    </small>
+                </div>
+
+                <div class="protection-level">
+                    <label for="protectionLevel">Protection Level:</label>
+                    <div class="level-options">
+                        <input type="radio" id="basic" name="protection" value="basic" checked>
+                        <label for="basic">Basic</label>
+                        
+                        <input type="radio" id="standard" name="protection" value="standard">
+                        <label for="standard">Standard</label>
+                        
+                        <input type="radio" id="advanced" name="protection" value="advanced">
+                        <label for="advanced">Advanced</label>
+                    </div>
+                    <small class="help-text">Higher levels apply multiple obfuscation layers</small>
                 </div>
 
                 <div id="strength-container" class="strength-group" style="display: none;">
