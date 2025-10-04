@@ -98,6 +98,10 @@ header {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+header:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .title {
@@ -157,6 +161,11 @@ body.dark-mode .theme-toggle {
   border: 1px solid rgba(255, 255, 255, 0.18);
   animation: fadeInUp 0.6s ease-out;
 }
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
 
 body.dark-mode .container {
   background: var(--glass-dark);
@@ -233,6 +242,13 @@ body.dark-mode .help-text {
   font-weight: 500;
   text-align: center;
   animation: slideIn 0.3s ease-out;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.message.show {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .message.success {
@@ -420,6 +436,8 @@ button {
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  background-size: 200% 200%;
+  transition: background-position 0.5s, transform 0.2s;
 }
 
 button::before {
@@ -438,8 +456,9 @@ button:hover::before {
 }
 
 button:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(127, 83, 172, 0.6);
+  background-position: right center;
+  transform: translateY(-2px) scale(1.05);
 }
 
 button:active {
@@ -561,4 +580,29 @@ body.dark-mode label {
   input, textarea, select {
     border-width: 3px;
   }
+}
+#outputCode {
+  box-shadow: 0 0 15px rgba(127, 83, 172, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+#outputCode:focus {
+  box-shadow: 0 0 25px rgba(127, 83, 172, 0.8);
+}
+#obfuscationStrength:active {
+  box-shadow: 0 0 15px #a78bfa;
+}
+body.dark-mode textarea,
+body.dark-mode input,
+body.dark-mode select {
+  border-image: linear-gradient(45deg, #7c3aed, #a78bfa) 1;
+}
+
+textarea {
+  caret-color: #a78bfa;
+  transition: caret-color 0.3s;
+}
+
+textarea:focus {
+  caret-color: #ffffff;
 }
