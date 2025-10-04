@@ -110,9 +110,18 @@
                         aria-describedby="output-help"
                     ></textarea>
                     <div class="output-stats">
-                        <span id="originalSize">Original: 0 chars</span>
-                        <span id="obfuscatedSize">Obfuscated: 0 chars</span>
-                        <span id="compressionRatio">Ratio: 0%</span>
+                        <div class="stats-item"></div>
+                            <span class="stat-label">Original:</span>
+                            <span id="originalSize" class="stat-value">0 chars</span>
+                        </div>
+                        <div class="stats-item">
+                            <span class="stat-label">Obfuscated:</span>
+                            <span id="obfuscatedSize" class="stat-value">0 chars</span>
+                        </div>
+                        <div class="stats-item">
+                            <span class="stat-label">Size Change:</span>
+                            <span id="compressionRatio" class="stat-value">0%</span>
+                        </div>
                     </div>
                 </div>
                 <small id="output-help" class="help-text">Copy this obfuscated code to use in your project</small>
