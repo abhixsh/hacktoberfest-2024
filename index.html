@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Obfuscator</title>
+    <meta name="description" content="A powerful JavaScript code obfuscator tool with multiple encoding options including Base64, ROT13, Unicode, and Hex encoding.">
+    <meta name="keywords" content="javascript, obfuscator, encoder, base64, rot13, unicode, hex, code protection">
+    <meta name="author" content="JavaScript Obfuscator Tool">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="JavaScript Obfuscator - Secure Your Code">
+    <meta property="og:description" content="Protect your JavaScript code with advanced obfuscation techniques">
+    <meta property="og:type" content="website">
+    
+    <title>JavaScript Obfuscator - Advanced Code Protection Tool</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
 </head>
 <body>
     <!-- Preloader -->
@@ -12,41 +23,84 @@
         <div class="spinner"></div>
     </div>
 
-    <!-- Title in Top Left -->
-    <div class="title">JavaScript Obfuscator</div>
-
-    <!-- Dark Mode Toggle Button -->
-    <div class="theme-toggle" id="themeIcon" onclick="toggleDarkMode()">🌙</div>
+    <!-- Header -->
+    <header>
+        <h1 class="title">JavaScript Obfuscator</h1>
+        <button class="theme-toggle" id="themeIcon" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+            🌙
+        </button>
+    </header>
 
     <!-- Main Container -->
-    <div class="container">
-        <label for="inputCode">Enter JavaScript Code:</label>
-        <textarea id="inputCode" placeholder="Enter your JavaScript code here..."></textarea>
+    <main class="container" role="main">
+        <form class="obfuscator-form" onsubmit="event.preventDefault(); obfuscateCode();">
+            <div class="input-group">
+                <label for="inputCode">Enter JavaScript Code:</label>
+                <textarea 
+                    id="inputCode" 
+                    placeholder="Enter your JavaScript code here..."
+                    aria-describedby="input-help"
+                    required
+                ></textarea>
+                <small id="input-help" class="help-text">Paste your JavaScript code that you want to obfuscate</small>
+            </div>
 
-        <!-- Obfuscation Options -->
-        <label for="obfuscationType">Obfuscation Type:</label>
-        <select id="obfuscationType">
-            <option value="base64">Base64</option>
-            <option value="rot13">ROT13</option>
-            <option value="scramble">Scramble</option>
-        </select>
+            <div class="options-group">
+                <div class="select-group">
+                    <label for="obfuscationType">Obfuscation Type:</label>
+                    <select id="obfuscationType" aria-describedby="type-help">
+                        <option value="base64">Base64 Encoding</option>
+                        <option value="rot13">ROT13 Cipher</option>
+                        <option value="scramble">Character Scramble</option>
+                        <option value="unicode">Unicode Escape</option>
+                        <option value="hex">Hexadecimal Encoding</option>
+                    </select>
+                    <small id="type-help" class="help-text">Choose your preferred obfuscation method</small>
+                </div>
 
-        <!-- Obfuscation Strength (only for scramble) -->
-        <div id="strength-container">
-            <label for="obfuscationStrength">Scramble Strength:</label>
-            <input type="number" id="obfuscationStrength" min="1" max="10" value="1">
-        </div>
+                <div id="strength-container" class="strength-group" style="display: none;">
+                    <label for="obfuscationStrength">Scramble Strength:</label>
+                    <input 
+                        type="range" 
+                        id="obfuscationStrength" 
+                        min="1" 
+                        max="10" 
+                        value="1"
+                        aria-describedby="strength-help"
+                    >
+                    <span id="strength-value">1</span>
+                    <small id="strength-help" class="help-text">Higher values = more scrambling iterations</small>
+                </div>
+            </div>
 
-        <!-- Obfuscate Button -->
-        <button onclick="obfuscateCode()">Obfuscate</button>
+            <button type="submit" class="obfuscate-btn" aria-describedby="obfuscate-help">
+                🔒 Obfuscate Code
+            </button>
+            <small id="obfuscate-help" class="help-text">Transform your code using the selected method</small>
 
-        <!-- Obfuscated Code Output -->
-        <label for="outputCode">Obfuscated Code:</label>
-        <textarea id="outputCode" readonly placeholder="Your obfuscated code will appear here..."></textarea>
+            <div class="output-group">
+                <label for="outputCode">Obfuscated Code:</label>
+                <textarea 
+                    id="outputCode" 
+                    readonly 
+                    placeholder="Your obfuscated code will appear here..."
+                    aria-describedby="output-help"
+                ></textarea>
+                <small id="output-help" class="help-text">Copy this obfuscated code to use in your project</small>
+            </div>
 
-        <!-- Copy Code Button -->
-        <button id="copyButton" onclick="copyCode()">Copy Code</button>
-    </div>
+            <div class="action-buttons">
+                <button type="button" id="copyButton" onclick="copyCode()" aria-describedby="copy-help">
+                    📋 Copy Code
+                </button>
+                <button type="button" onclick="clearAll()" class="clear-btn" aria-describedby="clear-help">
+                    🗑️ Clear All
+                </button>
+            </div>
+            <small id="copy-help" class="help-text">Copy the obfuscated code to your clipboard</small>
+            <small id="clear-help" class="help-text">Clear both input and output areas</small>
+        </form>
+    </main>
 
     <script src="script.js"></script>
 </body>
