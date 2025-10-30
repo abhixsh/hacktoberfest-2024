@@ -26,9 +26,14 @@
     <!-- Header -->
     <header>
         <h1 class="title">JavaScript Obfuscator</h1>
-        <button class="theme-toggle" id="themeIcon" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-            🌙
-        </button>
+        <div class="theme-switcher">
+            <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-input" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+            <label for="theme-toggle-checkbox" class="theme-toggle-label">
+                <span class="theme-icon sun-icon">☀️</span>
+                <span class="theme-icon moon-icon">🌙</span>
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
     </header>
 
     <!-- Main Container -->

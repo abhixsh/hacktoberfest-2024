@@ -89,10 +89,13 @@ async function copyCode() {
   
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
-    const themeIcon = document.getElementById("themeIcon");
+    const themeToggle = document.getElementById("theme-toggle-checkbox");
     const isDarkMode = document.body.classList.contains("dark-mode");
     
-    themeIcon.textContent = isDarkMode ? "☀️" : "🌙";
+    // Update checkbox state
+    if (themeToggle) {
+        themeToggle.checked = isDarkMode;
+    }
     
     // Save theme preference to localStorage
     localStorage.setItem("darkMode", isDarkMode);
@@ -148,9 +151,13 @@ function updateStrengthVisibility() {
 function initializeApp() {
     // Load saved theme preference
     const savedTheme = localStorage.getItem("darkMode");
+    const themeToggle = document.getElementById("theme-toggle-checkbox");
+    
     if (savedTheme === "true") {
         document.body.classList.add("dark-mode");
-        document.getElementById("themeIcon").textContent = "☀️";
+        if (themeToggle) {
+            themeToggle.checked = true;
+        }
     }
     
     // Hide preloader
